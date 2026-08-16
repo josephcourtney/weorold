@@ -1,0 +1,98 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "decision": {
+      "enum": [
+        "pass",
+        "fail",
+        "conditional-pass"
+      ]
+    },
+    "findings": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "fingerprint": {
+      "additionalProperties": false,
+      "properties": {
+        "architecture": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "lock_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "os": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "python": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "os",
+        "python",
+        "architecture",
+        "hostname",
+        "lock_sha256"
+      ],
+      "type": "object"
+    },
+    "operations": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "coefficient_of_variation": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "median_seconds": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "samples_seconds": {
+            "items": {
+              "minimum": 0,
+              "type": "number"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "samples_seconds",
+          "median_seconds",
+          "coefficient_of_variation"
+        ],
+        "type": "object"
+      },
+      "minProperties": 1,
+      "type": "object"
+    },
+    "run_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "version",
+    "fingerprint",
+    "operations",
+    "run_id"
+  ],
+  "title": "OCRalexia performance report",
+  "type": "object"
+}
+

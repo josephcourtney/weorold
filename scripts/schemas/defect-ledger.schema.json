@@ -1,0 +1,52 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "defects": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "affected_version": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "context": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "fix_revision": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "regression_test": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "affected_version",
+          "context",
+          "fix_revision",
+          "regression_test"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "version",
+    "defects"
+  ],
+  "title": "OCRalexia escaped-defect ledger",
+  "type": "object"
+}
+

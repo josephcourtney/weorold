@@ -1,0 +1,15 @@
+[tool.importlinter]
+  root_packages = ["weorold"]
+  exclude_type_checking_imports = true
+  include_external_packages = false
+
+  [[tool.importlinter.contracts]]
+    name = "Source capabilities depend on shared primitives"
+    type = "layers"
+    containers = ["weorold"]
+    layers = [
+        "geospatial | weather",
+        "provenance | models | _validation | _transport",
+        "errors",
+    ]
+    exhaustive = false

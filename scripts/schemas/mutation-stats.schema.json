@@ -1,0 +1,26 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "killed": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "no_tests": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "total": {
+      "minimum": 0,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "killed",
+    "no_tests",
+    "total"
+  ],
+  "title": "mutmut CI statistics subset",
+  "type": "object"
+}
+

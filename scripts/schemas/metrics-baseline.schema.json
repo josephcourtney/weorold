@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "cyclomatic": {
+      "additionalProperties": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "object"
+    },
+    "halstead": {
+      "additionalProperties": false,
+      "properties": {
+        "bugs": {
+          "additionalProperties": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "difficulty": {
+          "additionalProperties": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "effort": {
+          "additionalProperties": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "volume": {
+          "additionalProperties": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "type": "object"
+        }
+      },
+      "required": [
+        "volume",
+        "difficulty",
+        "effort",
+        "bugs"
+      ],
+      "type": "object"
+    },
+    "maintainability": {
+      "additionalProperties": {
+        "maximum": 100,
+        "minimum": 0,
+        "type": "number"
+      },
+      "type": "object"
+    },
+    "raw_sloc": {
+      "additionalProperties": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "object"
+    },
+    "thresholds": {
+      "additionalProperties": false,
+      "properties": {
+        "cyclomatic_ceiling": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "cyclomatic_ratchet": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "cyclomatic_tolerance": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "halstead_bugs_ceiling": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "halstead_bugs_ratchet": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "halstead_bugs_tolerance": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "halstead_difficulty_ceiling": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "halstead_difficulty_ratchet": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "halstead_difficulty_tolerance": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "halstead_effort_ceiling": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "halstead_effort_ratchet": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "halstead_effort_tolerance": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "halstead_volume_ceiling": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "halstead_volume_ratchet": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "halstead_volume_tolerance": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "maintainability_ratchet": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "maintainability_tolerance": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "raw_sloc_ceiling": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "raw_sloc_ratchet": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "raw_sloc_tolerance": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "cyclomatic_ratchet",
+        "cyclomatic_ceiling",
+        "cyclomatic_tolerance",
+        "halstead_bugs_ceiling",
+        "halstead_bugs_ratchet",
+        "halstead_bugs_tolerance",
+        "halstead_difficulty_ceiling",
+        "halstead_difficulty_ratchet",
+        "halstead_difficulty_tolerance",
+        "halstead_effort_ceiling",
+        "halstead_effort_ratchet",
+        "halstead_effort_tolerance",
+        "halstead_volume_ceiling",
+        "halstead_volume_ratchet",
+        "halstead_volume_tolerance",
+        "maintainability_ratchet",
+        "maintainability_tolerance",
+        "raw_sloc_ceiling",
+        "raw_sloc_ratchet",
+        "raw_sloc_tolerance"
+      ],
+      "type": "object"
+    },
+    "version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "version",
+    "thresholds",
+    "cyclomatic",
+    "raw_sloc",
+    "maintainability",
+    "halstead"
+  ],
+  "title": "OCRalexia metrics baseline",
+  "type": "object"
+}

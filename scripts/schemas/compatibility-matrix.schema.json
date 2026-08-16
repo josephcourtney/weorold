@@ -1,0 +1,37 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "required": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "os": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "python": {
+            "pattern": "^\\d+\\.\\d+$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "os",
+          "python"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "version",
+    "required"
+  ],
+  "title": "OCRalexia compatibility matrix",
+  "type": "object"
+}
+

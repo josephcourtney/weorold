@@ -1,0 +1,93 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "fingerprint": {
+      "additionalProperties": false,
+      "properties": {
+        "architecture": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "lock_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "os": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "python": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "os",
+        "python",
+        "architecture",
+        "hostname",
+        "lock_sha256"
+      ],
+      "type": "object"
+    },
+    "operations": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "calibration_cv": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "median_seconds": {
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "median_seconds",
+          "calibration_cv"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "status": {
+      "const": "calibrated"
+    },
+    "thresholds": {
+      "additionalProperties": false,
+      "properties": {
+        "absolute_allowance_seconds": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "relative_multiplier": {
+          "minimum": 1,
+          "type": "number"
+        }
+      },
+      "required": [
+        "absolute_allowance_seconds",
+        "relative_multiplier"
+      ],
+      "type": "object"
+    },
+    "version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "version",
+    "status",
+    "fingerprint",
+    "thresholds",
+    "operations"
+  ],
+  "title": "OCRalexia performance baseline",
+  "type": "object"
+}
+

@@ -1,0 +1,64 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifacts": {
+      "additionalProperties": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "decision": {
+      "enum": [
+        "pass",
+        "fail"
+      ]
+    },
+    "findings": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "kind": {
+      "const": "weorold-release-evidence"
+    },
+    "run_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "steps": {
+      "additionalProperties": {
+        "enum": [
+          "pass",
+          "fail",
+          "skipped"
+        ]
+      },
+      "type": "object"
+    },
+    "version": {
+      "const": 1
+    },
+    "waivers": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "version",
+    "kind",
+    "steps",
+    "waivers",
+    "artifacts",
+    "findings",
+    "decision",
+    "run_id"
+  ],
+  "title": "OCRalexia release evidence",
+  "type": "object"
+}
+

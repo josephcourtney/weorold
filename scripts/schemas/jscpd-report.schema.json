@@ -1,0 +1,98 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "duplicates": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "firstFile": {
+            "additionalProperties": true,
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          "fragment": {
+            "type": "string"
+          },
+          "secondFile": {
+            "additionalProperties": true,
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "firstFile",
+          "secondFile",
+          "fragment"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "statistics": {
+      "additionalProperties": true,
+      "properties": {
+        "total": {
+          "additionalProperties": true,
+          "properties": {
+            "clones": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "duplicatedLines": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "duplicatedTokens": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "percentage": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "percentageTokens": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "clones",
+            "duplicatedLines",
+            "duplicatedTokens",
+            "percentage",
+            "percentageTokens"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "total"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "statistics",
+    "duplicates"
+  ],
+  "title": "jscpd JSON report subset",
+  "type": "object"
+}
+

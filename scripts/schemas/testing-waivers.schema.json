@@ -1,0 +1,52 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "waivers": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "expires": {
+            "format": "date",
+            "type": "string"
+          },
+          "mitigation": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "owner": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "reason": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "scope": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "owner",
+          "reason",
+          "mitigation",
+          "expires"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "version",
+    "waivers"
+  ],
+  "title": "OCRalexia testing waivers",
+  "type": "object"
+}
+

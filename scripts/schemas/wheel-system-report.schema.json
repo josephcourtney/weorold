@@ -1,0 +1,44 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "consumer_output": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "decision": {
+      "const": "pass"
+    },
+    "outside_checkout": {
+      "const": true
+    },
+    "version": {
+      "const": 1
+    },
+    "wheel": {
+      "pattern": "\\.whl$",
+      "type": "string"
+    },
+    "workflows": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "version",
+    "decision",
+    "wheel",
+    "outside_checkout",
+    "workflows",
+    "consumer_output"
+  ],
+  "title": "OCRalexia wheel system report",
+  "type": "object"
+}
+

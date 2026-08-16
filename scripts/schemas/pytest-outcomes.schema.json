@@ -1,0 +1,233 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "decision": {
+      "enum": [
+        "pass",
+        "fail"
+      ]
+    },
+    "duration_seconds": {
+      "minimum": 0,
+      "type": "number"
+    },
+    "environment": {
+      "additionalProperties": false,
+      "properties": {
+        "architecture": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "dirty": {
+          "type": "boolean"
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "implementation": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "lock_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "os": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "python": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "revision": {
+          "pattern": "^[0-9a-f]{40}([0-9a-f]{24})?$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "revision",
+        "dirty",
+        "python",
+        "implementation",
+        "os",
+        "architecture",
+        "lock_sha256",
+        "hostname"
+      ],
+      "type": "object"
+    },
+    "flaky_tests": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "full_suite": {
+      "type": "boolean"
+    },
+    "outcomes": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "requirement_coverage": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "complete": {
+            "type": "boolean"
+          },
+          "observed_scopes": {
+            "items": {
+              "enum": [
+                "unit",
+                "component",
+                "integration",
+                "system",
+                "contract",
+                "invalid"
+              ]
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "required_scopes": {
+            "items": {
+              "enum": [
+                "unit",
+                "component",
+                "integration",
+                "system",
+                "contract"
+              ]
+            },
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "required_scopes",
+          "observed_scopes",
+          "complete"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "run_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "scope_counts": {
+      "additionalProperties": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "propertyNames": {
+        "enum": [
+          "unit",
+          "component",
+          "integration",
+          "system",
+          "contract"
+        ]
+      },
+      "type": "object"
+    },
+    "tests": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "durations": {
+            "additionalProperties": false,
+            "properties": {
+              "call": {
+                "minimum": 0,
+                "type": "number"
+              },
+              "setup": {
+                "minimum": 0,
+                "type": "number"
+              },
+              "teardown": {
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "required": [
+              "setup",
+              "call",
+              "teardown"
+            ],
+            "type": "object"
+          },
+          "flaky": {
+            "type": "boolean"
+          },
+          "nodeid": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "outcome": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "requirements": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "scope": {
+            "enum": [
+              "unit",
+              "component",
+              "integration",
+              "system",
+              "contract",
+              "invalid"
+            ]
+          }
+        },
+        "required": [
+          "nodeid",
+          "outcome",
+          "scope",
+          "requirements",
+          "flaky",
+          "durations"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "version": {
+      "const": 4
+    }
+  },
+  "required": [
+    "version",
+    "full_suite",
+    "duration_seconds",
+    "environment",
+    "tests",
+    "requirement_coverage",
+    "scope_counts",
+    "flaky_tests",
+    "outcomes",
+    "decision",
+    "run_id"
+  ],
+  "title": "OCRalexia normalized pytest evidence",
+  "type": "object"
+}
+

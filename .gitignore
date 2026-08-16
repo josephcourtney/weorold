@@ -1,0 +1,12 @@
+*.patch
+mutants/
+coverage.xml
+.cache/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+*.egg-info/

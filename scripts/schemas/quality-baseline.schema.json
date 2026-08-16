@@ -1,0 +1,345 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "coverage_files": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "branches": {
+            "anyOf": [
+              {
+                "maximum": 100,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "missing_branches": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "missing_statements": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "num_branches": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "num_statements": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "statements": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "statements",
+          "branches",
+          "missing_statements",
+          "missing_branches",
+          "num_statements",
+          "num_branches"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "coverage_global": {
+      "additionalProperties": false,
+      "properties": {
+        "branches": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_branches": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "missing_statements": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "num_branches": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "num_statements": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "statements": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "statements",
+        "branches",
+        "missing_statements",
+        "missing_branches",
+        "num_statements",
+        "num_branches"
+      ],
+      "type": "object"
+    },
+    "dead_code": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "duplication": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "additionalProperties": false,
+          "properties": {
+            "clones": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "duplicated_lines": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "duplicated_tokens": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fingerprints": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "percentage": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "percentage_tokens": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "clones",
+            "duplicated_lines",
+            "duplicated_tokens",
+            "percentage",
+            "percentage_tokens",
+            "fingerprints"
+          ],
+          "type": "object"
+        },
+        "tests": {
+          "additionalProperties": false,
+          "properties": {
+            "clones": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "duplicated_lines": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "duplicated_tokens": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "fingerprints": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "percentage": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "percentage_tokens": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "clones",
+            "duplicated_lines",
+            "duplicated_tokens",
+            "percentage",
+            "percentage_tokens",
+            "fingerprints"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "source",
+        "tests"
+      ],
+      "type": "object"
+    },
+    "mutation": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "bad_mutants": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "killed": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "no_tests": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "score": {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            "total": {
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "score",
+            "killed",
+            "no_tests",
+            "total",
+            "bad_mutants"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "outcomes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "thresholds": {
+      "additionalProperties": false,
+      "properties": {
+        "coverage_branch_floor": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "coverage_file_min_branches": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "coverage_file_min_statements": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "coverage_missing_tolerance": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "coverage_percentage_tolerance": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "coverage_statement_floor": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "duplication_count_tolerance": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "duplication_percentage_ceiling": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "duplication_percentage_tolerance": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "mutation_count_tolerance": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "mutation_score_floor": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        },
+        "mutation_score_tolerance": {
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "coverage_branch_floor",
+        "coverage_file_min_branches",
+        "coverage_file_min_statements",
+        "coverage_missing_tolerance",
+        "coverage_percentage_tolerance",
+        "coverage_statement_floor",
+        "duplication_count_tolerance",
+        "duplication_percentage_ceiling",
+        "duplication_percentage_tolerance",
+        "mutation_count_tolerance",
+        "mutation_score_floor",
+        "mutation_score_tolerance"
+      ],
+      "type": "object"
+    },
+    "version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "version",
+    "thresholds",
+    "coverage_global",
+    "coverage_files",
+    "dead_code",
+    "duplication",
+    "outcomes",
+    "mutation"
+  ],
+  "title": "OCRalexia quality baseline",
+  "type": "object"
+}
+

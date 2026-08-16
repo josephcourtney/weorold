@@ -1,0 +1,58 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "architecture": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "decision": {
+      "const": "pass"
+    },
+    "kind": {
+      "const": "weorold-compatibility-evidence"
+    },
+    "lock_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "os": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "python": {
+      "pattern": "^\\d+\\.\\d+$",
+      "type": "string"
+    },
+    "revision": {
+      "pattern": "^[0-9a-f]{40}([0-9a-f]{24})?$",
+      "type": "string"
+    },
+    "test_evidence_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "test_run_id": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "version",
+    "kind",
+    "os",
+    "python",
+    "architecture",
+    "revision",
+    "lock_sha256",
+    "test_run_id",
+    "test_evidence_sha256",
+    "decision"
+  ],
+  "title": "OCRalexia compatibility evidence",
+  "type": "object"
+}
+

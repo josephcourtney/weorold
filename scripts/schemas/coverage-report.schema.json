@@ -1,0 +1,93 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "files": {
+      "additionalProperties": {
+        "additionalProperties": true,
+        "properties": {
+          "summary": {
+            "additionalProperties": true,
+            "properties": {
+              "covered_branches": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "missing_lines": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "num_branches": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "num_statements": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "percent_statements_covered": {
+                "maximum": 100,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "required": [
+              "percent_statements_covered",
+              "missing_lines",
+              "num_statements",
+              "num_branches",
+              "covered_branches"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "summary"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "totals": {
+      "additionalProperties": true,
+      "properties": {
+        "covered_branches": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "missing_lines": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "num_branches": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "num_statements": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "percent_statements_covered": {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "percent_statements_covered",
+        "missing_lines",
+        "num_statements",
+        "num_branches",
+        "covered_branches"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "totals",
+    "files"
+  ],
+  "title": "coverage.py JSON report subset",
+  "type": "object"
+}
+

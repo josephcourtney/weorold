@@ -1,0 +1,42 @@
+{
+  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "requirements": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "scopes": {
+            "items": {
+              "enum": [
+                "unit",
+                "component",
+                "integration",
+                "system",
+                "contract"
+              ]
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "scopes"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "version",
+    "requirements"
+  ],
+  "title": "OCRalexia testing requirements",
+  "type": "object"
+}
+

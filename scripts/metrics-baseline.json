@@ -1,0 +1,73 @@
+{
+  "cyclomatic": {
+    "src/weorold/_transport.py:method:CachedHttpClient.get": 18,
+    "src/weorold/_transport.py:method:CachedHttpClient.post": 15,
+    "src/weorold/geospatial/arcgis.py:method:ArcGisImageSampleSource._batch": 17,
+    "src/weorold/geospatial/lidar.py:block:UsgsLidarProjectSource": 15,
+    "src/weorold/geospatial/lidar.py:method:PdalEptPointSource._source_xy": 11,
+    "src/weorold/geospatial/lidar.py:method:UsgsLidarProjectSource.locate": 14,
+    "src/weorold/geospatial/mrlc.py:method:GeoServerWmsPointSource._numeric_feature_value": 11,
+    "src/weorold/geospatial/mrlc.py:method:GeoServerWmsPointSource.resolve_layer": 15,
+    "src/weorold/geospatial/osm.py:block:OsmRouteSurfaceSource": 11,
+    "src/weorold/geospatial/osm.py:method:OsmRouteSurfaceSource.fetch": 18,
+    "src/weorold/geospatial/smap.py:block:_data_link": 12,
+    "src/weorold/geospatial/smap.py:method:SmapL4Source._granule": 14,
+    "src/weorold/geospatial/ssurgo.py:block:_rows": 13,
+    "src/weorold/weather/nws.py:block:NwsWeatherSource": 20,
+    "src/weorold/weather/nws.py:block:_parse_series": 11,
+    "src/weorold/weather/nws.py:method:NwsWeatherSource.fetch": 19
+  },
+  "halstead": {
+    "bugs": {
+      "src/weorold/_transport.py": 0.411919083766033,
+      "src/weorold/geospatial/lidar.py": 0.33487618041092665,
+      "src/weorold/geospatial/osm.py": 0.3726286545518234,
+      "src/weorold/geospatial/smap.py": 0.4343387963580796,
+      "src/weorold/weather/nws.py": 0.390615073654772
+    },
+    "difficulty": {
+      "src/weorold/_transport.py": 10.852941176470589,
+      "src/weorold/geospatial/mrlc.py": 10.595238095238095,
+      "src/weorold/geospatial/osm.py": 10.731707317073171,
+      "src/weorold/weather/nws.py": 11.535714285714286
+    },
+    "effort": {
+      "src/weorold/_transport.py": 13411.600756735252,
+      "src/weorold/geospatial/osm.py": 11996.824975814803,
+      "src/weorold/geospatial/smap.py": 11901.313058623617,
+      "src/weorold/weather/nws.py": 13518.071656124075
+    },
+    "volume": {
+      "src/weorold/_transport.py": 1235.757251298099,
+      "src/weorold/geospatial/lidar.py": 1004.62854123278,
+      "src/weorold/geospatial/osm.py": 1117.8859636554703,
+      "src/weorold/geospatial/smap.py": 1303.0163890742388,
+      "src/weorold/weather/nws.py": 1171.845220964316
+    }
+  },
+  "maintainability": {},
+  "raw_sloc": {},
+  "thresholds": {
+    "cyclomatic_ceiling": 21,
+    "cyclomatic_ratchet": 11,
+    "cyclomatic_tolerance": 0,
+    "halstead_bugs_ceiling": 1.25,
+    "halstead_bugs_ratchet": 0.33,
+    "halstead_bugs_tolerance": 0.005,
+    "halstead_difficulty_ceiling": 15.0,
+    "halstead_difficulty_ratchet": 10.0,
+    "halstead_difficulty_tolerance": 0.1,
+    "halstead_effort_ceiling": 30000.0,
+    "halstead_effort_ratchet": 10000.0,
+    "halstead_effort_tolerance": 100.0,
+    "halstead_volume_ceiling": 4000.0,
+    "halstead_volume_ratchet": 1000.0,
+    "halstead_volume_tolerance": 5.0,
+    "maintainability_ratchet": 20.0,
+    "maintainability_tolerance": 0.25,
+    "raw_sloc_ceiling": 800,
+    "raw_sloc_ratchet": 400,
+    "raw_sloc_tolerance": 5
+  },
+  "version": 1
+}
