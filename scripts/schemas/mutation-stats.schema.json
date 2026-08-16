@@ -1,5 +1,5 @@
 {
-  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": true,
   "properties": {
     "killed": {
@@ -23,4 +23,3 @@
   "title": "mutmut CI statistics subset",
   "type": "object"
 }
-

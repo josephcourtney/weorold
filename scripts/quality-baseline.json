@@ -1,157 +1,61 @@
 {
   "coverage_files": {
-    "src/weorold/activities/models.py": {
-      "branches": 50.0,
-      "missing_branches": 10,
-      "missing_statements": 10,
-      "num_branches": 20,
-      "num_statements": 75,
-      "statements": 86.66666666666667
-    },
-    "src/weorold/assessment/trajectory.py": {
-      "branches": 35.0,
-      "missing_branches": 13,
-      "missing_statements": 13,
-      "num_branches": 20,
-      "num_statements": 83,
-      "statements": 84.33734939759036
-    },
-    "src/weorold/debug/server.py": {
-      "branches": 41.666666666666664,
-      "missing_branches": 7,
-      "missing_statements": 15,
-      "num_branches": 12,
-      "num_statements": 62,
-      "statements": 75.80645161290323
-    },
-    "src/weorold/domain/body.py": {
-      "branches": 65.0,
-      "missing_branches": 7,
-      "missing_statements": 7,
-      "num_branches": 20,
-      "num_statements": 32,
-      "statements": 78.125
-    },
-    "src/weorold/environment/psychrometrics.py": {
-      "branches": 50.0,
-      "missing_branches": 7,
-      "missing_statements": 7,
-      "num_branches": 14,
-      "num_statements": 37,
-      "statements": 81.08108108108108
-    },
-    "src/weorold/environment/timeline.py": {
-      "branches": 50.0,
-      "missing_branches": 15,
-      "missing_statements": 15,
-      "num_branches": 30,
-      "num_statements": 65,
-      "statements": 76.92307692307692
-    },
-    "src/weorold/hydration/models.py": {
-      "branches": 50.0,
-      "missing_branches": 7,
-      "missing_statements": 7,
-      "num_branches": 14,
-      "num_statements": 69,
-      "statements": 89.85507246376811
-    },
-    "src/weorold/physiology/capacity.py": {
-      "branches": 50.0,
-      "missing_branches": 8,
-      "missing_statements": 10,
-      "num_branches": 16,
-      "num_statements": 51,
-      "statements": 80.3921568627451
-    },
-    "src/weorold/physiology/models.py": {
-      "branches": 50.0,
-      "missing_branches": 6,
-      "missing_statements": 10,
-      "num_branches": 12,
-      "num_statements": 108,
-      "statements": 90.74074074074075
-    },
-    "src/weorold/simulation/garment_coupled.py": {
-      "branches": 50.0,
-      "missing_branches": 6,
-      "missing_statements": 10,
-      "num_branches": 12,
-      "num_statements": 80,
-      "statements": 87.5
-    },
-    "src/weorold/sources/geospatial/arcgis.py": {
+    "src/weorold/geospatial/arcgis.py": {
       "branches": 56.666666666666664,
       "missing_branches": 13,
       "missing_statements": 21,
       "num_branches": 30,
-      "num_statements": 84,
-      "statements": 75.0
+      "num_statements": 85,
+      "statements": 75.29411764705883
     },
-    "src/weorold/sources/geospatial/lidar.py": {
+    "src/weorold/geospatial/lidar.py": {
       "branches": 13.88888888888889,
       "missing_branches": 31,
-      "missing_statements": 77,
+      "missing_statements": 76,
       "num_branches": 36,
-      "num_statements": 139,
-      "statements": 44.60431654676259
+      "num_statements": 138,
+      "statements": 44.927536231884055
     },
-    "src/weorold/sources/geospatial/mrlc.py": {
+    "src/weorold/geospatial/mrlc.py": {
       "branches": 51.92307692307692,
       "missing_branches": 25,
       "missing_statements": 32,
       "num_branches": 52,
-      "num_statements": 158,
-      "statements": 79.74683544303798
+      "num_statements": 160,
+      "statements": 80.0
     },
-    "src/weorold/sources/geospatial/smap.py": {
+    "src/weorold/geospatial/smap.py": {
       "branches": 61.53846153846154,
       "missing_branches": 20,
-      "missing_statements": 42,
+      "missing_statements": 45,
       "num_branches": 52,
-      "num_statements": 167,
-      "statements": 74.8502994011976
+      "num_statements": 170,
+      "statements": 73.52941176470588
     },
-    "src/weorold/sources/geospatial/ssurgo.py": {
-      "branches": 41.666666666666664,
-      "missing_branches": 14,
-      "missing_statements": 24,
-      "num_branches": 24,
-      "num_statements": 101,
-      "statements": 76.23762376237623
+    "src/weorold/geospatial/ssurgo.py": {
+      "branches": 42.857142857142854,
+      "missing_branches": 8,
+      "missing_statements": 14,
+      "num_branches": 14,
+      "num_statements": 60,
+      "statements": 76.66666666666667
     },
-    "src/weorold/sourceweorold._transport.py": {
-      "branches": 55.88235294117647,
-      "missing_branches": 15,
-      "missing_statements": 41,
-      "num_branches": 34,
-      "num_statements": 138,
-      "statements": 70.28985507246377
-    },
-    "src/weorold/sources/route_inputs.py": {
-      "branches": 53.57142857142857,
-      "missing_branches": 65,
-      "missing_statements": 102,
-      "num_branches": 140,
-      "num_statements": 379,
-      "statements": 73.08707124010554
-    },
-    "src/weorold/sources/weather/nws.py": {
-      "branches": 44.827586206896555,
-      "missing_branches": 32,
-      "missing_statements": 34,
-      "num_branches": 58,
-      "num_statements": 181,
-      "statements": 81.21546961325967
+    "src/weorold/weather/nws.py": {
+      "branches": 44.44444444444444,
+      "missing_branches": 30,
+      "missing_statements": 32,
+      "num_branches": 54,
+      "num_statements": 157,
+      "statements": 79.61783439490446
     }
   },
   "coverage_global": {
-    "branches": 59.04392764857881,
-    "missing_branches": 634,
-    "missing_statements": 834,
-    "num_branches": 1548,
-    "num_statements": 5269,
-    "statements": 84.17156955779085
+    "branches": 54.7029702970297,
+    "missing_branches": 183,
+    "missing_statements": 295,
+    "num_branches": 404,
+    "num_statements": 1378,
+    "statements": 78.59216255442671
   },
   "dead_code": [],
   "duplication": {
@@ -164,12 +68,14 @@
       "percentage_tokens": 0.0
     },
     "tests": {
-      "clones": 0,
-      "duplicated_lines": 0,
-      "duplicated_tokens": 0,
-      "fingerprints": [],
-      "percentage": 0.0,
-      "percentage_tokens": 0.0
+      "clones": 1,
+      "duplicated_lines": 19,
+      "duplicated_tokens": 109,
+      "fingerprints": [
+        "tests/unit/test_transport.py|tests/unit/test_transport.py|893b83138ba5f766"
+      ],
+      "percentage": 2.2,
+      "percentage_tokens": 1.55
     }
   },
   "mutation": null,

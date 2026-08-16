@@ -1,5 +1,5 @@
 {
-  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
     "files": {
@@ -33,4 +33,3 @@
   "title": "OCRalexia evidence bundle manifest",
   "type": "object"
 }
-

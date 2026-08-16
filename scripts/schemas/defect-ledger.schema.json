@@ -1,5 +1,5 @@
 {
-  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
     "defects": {
@@ -49,4 +49,3 @@
   "title": "OCRalexia escaped-defect ledger",
   "type": "object"
 }
-

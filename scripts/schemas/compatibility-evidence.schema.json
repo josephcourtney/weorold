@@ -1,5 +1,5 @@
 {
-  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
     "architecture": {
@@ -10,7 +10,7 @@
       "const": "pass"
     },
     "kind": {
-      "const": "weorold-compatibility-evidence"
+      "const": "nettweg-compatibility-evidence"
     },
     "lock_sha256": {
       "pattern": "^[0-9a-f]{64}$",
@@ -55,4 +55,3 @@
   "title": "OCRalexia compatibility evidence",
   "type": "object"
 }
-

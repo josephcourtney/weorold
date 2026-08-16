@@ -1,5 +1,5 @@
 {
-  "$schema":weorold._transports://json-schema.org/draft/2020-12/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
   "properties": {
     "artifacts": {
@@ -22,7 +22,7 @@
       "type": "array"
     },
     "kind": {
-      "const": "weorold-release-evidence"
+      "const": "nettweg-release-evidence"
     },
     "run_id": {
       "pattern": "^[0-9a-f]{64}$",
@@ -61,4 +61,3 @@
   "title": "OCRalexia release evidence",
   "type": "object"
 }
-
