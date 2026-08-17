@@ -5,7 +5,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from math import cos, radians, sqrt
 
-from weorold._transport import HttpGetter
+from weorold.transport import HttpGetter
 from weorold.errors import DataSourceError
 from weorold.models import GeoPoint
 

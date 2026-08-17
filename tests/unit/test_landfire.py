@@ -5,7 +5,7 @@ import json
 import pytest
 
 from weorold import GeoPoint
-from weorold._transport import HttpHeaders, QueryParams
+from weorold.transport import HttpHeaders, QueryParams
 from weorold.geospatial import (
     LandfireCanopyHeightSource,
     LandfireVegetationHeightSource,

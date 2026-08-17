@@ -1,12 +1,12 @@
 [project]
   name = "weorold"
-  version = "0.4.0"
+  version = "0.4.1"
   description = "Remote weather and geospatial data-source adapters"
   readme = "README.md"
   authors = [
     { name = "Joseph M Courtney", email = "5942706+josephcourtney@users.noreply.github.com" },
   ]
-  urls = { "Homepage"= "https://github.com/josephcourtney/weorold", "Bug Tracker"= "https://github.com/josephcourtney/weorold/issues" }
+  urls = { "Homepage" = "https://github.com/josephcourtney/weorold", "Bug Tracker" = "https://github.com/josephcourtney/weorold/issues" }
   license = "GPL-3.0-only"
   license-files = ["LICENSE*"]
   requires-python = ">=3.13"
@@ -23,7 +23,7 @@
     "h5py>=3.16.0",
     "pyproj>=3.7.2",
     "numpy>=2",
-]
+  ]
 
 
 [dependency-groups]
@@ -190,7 +190,7 @@
   parallel = true
   # pytest-cov records per-test dynamic contexts. Coverage's sys.monitoring core,
   # which is the default on Python 3.14+, does not support dynamic contexts.
-  core     = "ctrace"
+  core = "ctrace"
 
 # =================================== test:mutation ===================================
 [tool.mutmut]
@@ -204,4 +204,3 @@
     "tests",
     "pyproject.toml",
   ]
-

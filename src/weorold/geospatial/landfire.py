@@ -4,7 +4,7 @@ import re
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 
-from weorold._transport import HttpGetter
+from weorold.transport import HttpGetter
 from weorold.errors import DataSourceError
 from weorold.models import GeoPoint
 

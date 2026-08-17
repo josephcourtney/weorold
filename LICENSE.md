@@ -2,7 +2,7 @@
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
- Copyright (C) 2007 Free Software Foundation, Inc.weorold._transports://fsf.org/>
+ Copyright (C) 2007 Free Software Foundation, Inc.weorold.transports://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -646,7 +646,7 @@ the "copyright" line and a pointer to where the full notice is found.
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, seeweorold._transports://www.gnu.org/licenses/>.
+    along with this program.  If not, seeweorold.transports://www.gnu.org/licenses/>.
 
 Also add information on how to contact you by electronic and paper mail.
 

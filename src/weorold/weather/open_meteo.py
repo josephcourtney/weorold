@@ -6,7 +6,7 @@ from datetime import UTC, datetime, timedelta
 from math import isfinite
 from typing import Any
 
-from weorold._transport import HttpGetter
+from weorold.transport import HttpGetter
 from weorold._validation import validate_time_window
 from weorold.errors import DataSourceError
 from weorold.models import GeoPoint

@@ -10,7 +10,7 @@ import numpy as np
 import pytest
 
 from weorold import GeoPoint
-from weorold._transport import HttpGetter
+from weorold.transport import HttpGetter
 from weorold.geospatial import (
     SmapL4Source,
 )

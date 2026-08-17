@@ -26,7 +26,7 @@
     "src/weorold/sources/geospatial/mrlc.py:method:GeoServerWmsPointSource.resolve_layer": 15,
     "src/weorold/sources/geospatial/osm.py:block:OsmRouteSurfaceSource": 11,
     "src/weorold/sources/geospatial/osm.py:method:OsmRouteSurfaceSource.fetch": 18,
-    "src/weorold/sourceweorold._transport.py:method:CachedHttpClient.get": 17,
+    "src/weorold/sourceweorold.transport.py:method:CachedHttpClient.get": 17,
     "src/weorold/sources/route_inputs.py:block:prepare_us_route_inputs": 37,
     "src/weorold/sources/weather/nws.py:block:NwsWeatherSource": 25,
     "src/weorold/sources/weather/nws.py:block:_parse_series": 11,
@@ -61,7 +61,7 @@
       "src/weorold/route/terrain.py": 11.393617021276595,
       "src/weorold/sources/geospatial/mrlc.py": 11.547619047619047,
       "src/weorold/sources/geospatial/osm.py": 10.577777777777778,
-      "src/weorold/sourceweorold._transport.py": 10.266666666666667,
+      "src/weorold/sourceweorold.transport.py": 10.266666666666667,
       "src/weorold/sources/route_inputs.py": 12.169014084507042,
       "src/weorold/sources/weather/nws.py": 12.394039735099337,
       "src/weorold/sources/weather/open_meteo.py": 10.625

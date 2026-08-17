@@ -9,7 +9,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from typing import Any
 
-from weorold._transport import HttpGetter
+from weorold.transport import HttpGetter
 from weorold.errors import DataSourceError
 from weorold.geospatial.models import LidarPoint
 from weorold.models import GeoPoint

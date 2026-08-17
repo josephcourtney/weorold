@@ -8,7 +8,7 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile
 from typing import Any
 
-from weorold._transport import HttpGetter
+from weorold.transport import HttpGetter
 from weorold.errors import DataSourceError
 from weorold.geospatial.models import SmapMoistureSample
 from weorold.models import GeoPoint

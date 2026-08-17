@@ -6,7 +6,7 @@ from urllib.error import HTTPError, URLError
 
 import pytest
 
-from weorold._transport import CachedHttpClient
+from weorold.transport import CachedHttpClient
 from weorold.errors import DataSourceError
 
 
@@ -41,7 +41,7 @@ def test_cached_http_client_reuses_fresh_response(monkeypatch, tmp_path):
         calls += 1
         return _Response(b"payload")
 
-    monkeypatch.setattr("weorold._transport.urlopen", fake_urlopen)
+    monkeypatch.setattr("weorold.transport.urlopen", fake_urlopen)
     client = CachedHttpClient(cache_dir=tmp_path, timeout_s=3.0, max_retries=0)
     assert client.get("https://example.test/data", params={"x": 1}, ttl_s=60) == b"payload"
     assert client.get("https://example.test/data", params={"x": 1}, ttl_s=60) == b"payload"
@@ -58,8 +58,8 @@ def test_cached_http_client_retries_transient_network_failure(monkeypatch):
             raise outcome
         return outcome
 
-    monkeypatch.setattr("weorold._transport.urlopen", fake_urlopen)
-    monkeypatch.setattr("weorold._transport.time.sleep", lambda _seconds: None)
+    monkeypatch.setattr("weorold.transport.urlopen", fake_urlopen)
+    monkeypatch.setattr("weorold.transport.time.sleep", lambda _seconds: None)
     client = CachedHttpClient(max_retries=1, retry_backoff_s=0.0)
     assert client.get("https://example.test/data") == b"ok"
     assert outcomes == []
@@ -83,8 +83,8 @@ def test_cached_http_client_retries_http_error_with_invalid_retry_after(monkeypa
             raise outcome
         return outcome
 
-    monkeypatch.setattr("weorold._transport.urlopen", fake_urlopen)
-    monkeypatch.setattr("weorold._transport.time.sleep", sleeps.append)
+    monkeypatch.setattr("weorold.transport.urlopen", fake_urlopen)
+    monkeypatch.setattr("weorold.transport.time.sleep", sleeps.append)
     client = CachedHttpClient(max_retries=1, retry_backoff_s=0.25)
 
     assert client.get("https://example.test/data") == b"ok"
@@ -104,7 +104,7 @@ def test_cached_http_client_surfaces_non_retryabld_http_error(monkeypatch):
         del timeout
         raise error
 
-    monkeypatch.setattr("weorold._transport.urlopen", fake_urlopen)
+    monkeypatch.setattr("weorold.transport.urlopen", fake_urlopen)
     client = CachedHttpClient(max_retries=2)
 
     with pytest.raises(DataSourceError, match=r"HTTP 404.*not found"):
@@ -123,7 +123,7 @@ def test_cached_http_client_does_not_cache_authenticated_get(
         calls += 1
         return _Response(f"value-{calls}".encode())
 
-    monkeypatch.setattr("weorold._transport.urlopen", fake_urlopen)
+    monkeypatch.setattr("weorold.transport.urlopen", fake_urlopen)
 
     client = CachedHttpClient(
         cache_dir=tmp_path,
@@ -156,7 +156,7 @@ def test_cached_http_client_does_not_cache_authenticated_post(
         calls += 1
         return _Response(f"value-{calls}".encode())
 
-    monkeypatch.setattr("weorold._transport.urlopen", fake_urlopen)
+    monkeypatch.setattr("weorold.transport.urlopen", fake_urlopen)
 
     client = CachedHttpClient(
         cache_dir=tmp_path,

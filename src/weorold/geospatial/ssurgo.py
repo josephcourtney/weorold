@@ -4,7 +4,7 @@ import json
 from dataclasses import dataclass
 from typing import Any, cast
 
-from weorold._transport import HttpPoster
+from weorold.transport import HttpPoster
 from weorold.errors import DataSourceError
 from weorold.geospatial.models import (
     SsurgoHorizon,
